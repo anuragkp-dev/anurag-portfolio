@@ -1910,7 +1910,7 @@ html.light {
 
   --text: #1b1130;
   --text-mid: #57496f;
-  --text-dim: #7d7093;
+  --text-dim: #6b5f80;
 
   --shadow-card: 0 22px 54px -34px rgba(76, 29, 149, 0.4);
   --shadow-glow: 0 18px 50px -22px rgba(124, 58, 237, 0.4);
@@ -1940,6 +1940,36 @@ html.light .tl-item__period {
 
 html.light .fact__title {
   color: var(--text);
+}
+
+/* Components below carry colours hard-coded for the dark theme. Their surfaces
+   invert in light mode, so pale text and glyphs that read well on near-black
+   washed out to roughly 1.1–1.4:1 on white. Restated in the light palette. */
+html.light .badge,
+html.light .tag,
+html.light .btn--ghost,
+html.light .hero__roles,
+html.light .social-btn,
+html.light .icon-btn,
+html.light .round-btn,
+html.light .tl-item__icon {
+  color: var(--deep);
+}
+
+html.light .badge svg,
+html.light .orbit-badge svg {
+  color: var(--violet);
+}
+
+/* The About caption floats on the deliberately-dark mock screen, so it keeps a
+   dark pill in both themes and needs light text rather than the dark
+   `--text` token it inherits in light mode. */
+html.light .frame__caption {
+  color: #f3ecff;
+}
+
+html.light .frame__caption small {
+  color: #c9b8ea;
 }
 
 html.light .orbit-badge {
