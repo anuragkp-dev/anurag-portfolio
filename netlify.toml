@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Single-page site with anchor navigation (no client-side router), so a
+# catch-all rewrite is not required. Add one here if routing is introduced.
