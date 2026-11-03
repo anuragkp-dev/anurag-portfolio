@@ -3,6 +3,13 @@
  * touching component markup.
  */
 
+/**
+ * Canonical origin, no trailing slash. Used for the runtime `og:url` / canonical
+ * tags; `index.html`, `public/robots.txt` and `public/sitemap.xml` carry the
+ * same value and have to be updated alongside it.
+ */
+export const SITE_URL = 'https://anuragkp-portfolio.netlify.app'
+
 export const profile = {
   name: 'Anurag K P',
   greeting: 'Hello, I’m',
@@ -15,6 +22,12 @@ export const profile = {
     'I’m Anurag K P, a B.Tech student in Artificial Intelligence & Data Science at CMSCET. I’m passionate about building useful products with technology, and I enjoy solving real-world problems, exploring AI, and developing scalable apps and web platforms.',
   email: 'anuragkaruthodi@gmail.com',
   location: 'Palakkad, Kerala',
+  /**
+   * Path to the CV in `public/`. The Download Resume button renders only while
+   * this is non-empty, so clearing it is how you hide the button if the file
+   * ever goes missing.
+   */
+  resumeUrl: '/resume.pdf',
 }
 
 export const socials = [
@@ -108,7 +121,12 @@ export const featuredProjects = [
   },
 ]
 
-/** `url` empty means there is no public destination yet — the card renders unlinked. */
+/**
+ * `url` empty means there is no public destination yet — the card renders
+ * unlinked and is labelled "In progress" so an unlinked card reads as work
+ * still underway rather than a broken link. Add a `url` and the label goes
+ * away and the card becomes a link.
+ */
 export const projects = [
   {
     id: 'menu-scanner',

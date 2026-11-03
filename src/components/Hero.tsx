@@ -72,11 +72,12 @@ export function Hero() {
               View My Work
               <UiIcon name="arrowRight" />
             </a>
-            {/* drop your CV at public/resume.pdf to make this work */}
-            <a className="btn btn--ghost" href="/resume.pdf" download>
-              Download Resume
-              <UiIcon name="download" />
-            </a>
+            {profile.resumeUrl && (
+              <a className="btn btn--ghost" href={profile.resumeUrl} download>
+                Download Resume
+                <UiIcon name="download" />
+              </a>
+            )}
           </div>
 
           <div className="hero__socials">

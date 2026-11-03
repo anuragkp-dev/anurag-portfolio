@@ -9,19 +9,59 @@
       content="Anurag K P — B.Tech Artificial Intelligence & Data Science student at CMSCET. I build AI-powered apps, web platforms, and real-world solutions."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     <meta name="theme-color" content="#06030d" />
+
+    <!-- Canonical origin. Keep in sync with SITE_URL in src/data/portfolio.ts,
+         public/robots.txt and public/sitemap.xml. The four absolute URL tags
+         below are rewritten at runtime by useCanonicalTags() in src/App.tsx;
+         these static values are what non-JS crawlers and unfurlers see. -->
+    <link rel="canonical" href="https://anuragkp-portfolio.netlify.app/" />
+
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anurag K P" />
+    <meta property="og:url" content="https://anuragkp-portfolio.netlify.app/" />
     <meta property="og:title" content="Anurag K P — AI &amp; DS Student, App Developer" />
     <meta
       property="og:description"
       content="B.Tech Artificial Intelligence &amp; Data Science student at CMSCET. I build AI-powered apps, web platforms, and practical tools."
     />
+    <meta property="og:image" content="https://anuragkp-portfolio.netlify.app/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Anurag K P — B.Tech AI &amp; Data Science student building AI-powered apps and web platforms."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anurag K P — AI &amp; DS Student, App Developer" />
+    <meta
+      name="twitter:description"
+      content="B.Tech Artificial Intelligence &amp; Data Science student at CMSCET. I build AI-powered apps, web platforms, and practical tools."
+    />
+    <meta name="twitter:image" content="https://anuragkp-portfolio.netlify.app/og-image.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Applies the stored theme before first paint. Without this the dark
+         theme paints first and a light-mode visitor sees it flash. Keep the
+         storage key in sync with useTheme() in src/components/Nav.tsx. -->
+    <script>
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+          document.documentElement.classList.add('light')
+        }
+      } catch (e) {
+        /* private mode / storage disabled — the dark default is fine */
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

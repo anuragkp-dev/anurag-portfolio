@@ -177,7 +177,10 @@ export function Projects() {
                 <span className="proj__icon">
                   <UiIcon name={p.icon} />
                 </span>
-                <h3 className="proj__title">{p.title}</h3>
+                <h3 className="proj__title">
+                  {p.title}
+                  {!p.url && <span className="proj__flag">In progress</span>}
+                </h3>
                 <p className="proj__desc">{p.description}</p>
                 <div className="proj__tech">
                   {p.tech.map((t) => (
